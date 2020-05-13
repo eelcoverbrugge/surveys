@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Questionnaire;
 
-class QuestionController extends Controller
+class SurveyController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -22,9 +22,9 @@ class QuestionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Questionnaire $questionnaire)
+    public function create()
     {
-        return view('question.create', compact('questionnaire'));
+        //
     }
 
     /**
@@ -36,15 +36,18 @@ class QuestionController extends Controller
     public function store(Request $request, Questionnaire $questionnaire)
     {
         $data = request()->validate([
-            'question.question' =>  'required',
-            'answers.*.answer'  =>  'required',
+            'responses.*.answer_id'     => 'required',
+            'responses.*.question_id'   => 'required',
+            'survey.name'               => 'required',
+            'survey.email'              => 'required|email',
+            
         ]);
 
-        $question = $questionnaire->questions()->create($data['question']);
+        $survey = $questionnaire->surveys()->create($data['survey']);
+        $survey->responses()->createMany($data['responses']);
 
-        $question->answers()->createMany($data['answers']);
+        return 'Thank you!';
 
-        return redirect('/questionnaires/'.$questionnaire->id);
     }
 
     /**
@@ -53,9 +56,10 @@ class QuestionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Questionnaire $questionnaire, $slug)
     {
-        //
+        $questionnaire->load('questions.answers');
+        return view('survey.show', compact('questionnaire'));
     }
 
     /**
