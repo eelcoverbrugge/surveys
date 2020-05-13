@@ -34,16 +34,16 @@
 
                     <div class="card-body">
                         <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input name="survey[name]" type="text" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Enter Your Name">
+                            <label for="name">Your name</label>
+                            <input name="survey[name]" type="text" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Enter your name">
                             <small id="nameHelp" class="form-text text-muted">Hello! What's your name?</small>
                             @error('survey.name')
                             <small class="text-danger">{{$message}}</small>
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="email">Your E-mail</label>
-                            <input name="survey[email]" type="text" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter Your E-mail">
+                            <label for="email">Your e-mail</label>
+                            <input name="survey[email]" type="text" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter your e-mail">
                             <small id="emailHelp" class="form-text text-muted">Enter your e-mail please.</small>
                             @error('survey.email')
                             <small class="text-danger">{{$message}}</small>

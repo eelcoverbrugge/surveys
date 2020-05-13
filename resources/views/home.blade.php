@@ -18,7 +18,7 @@
                 </div>
             </div>
             <div class="card mt-4">
-                <div class="card-header">My Questionnaires</div>
+                <div class="card-header">My questionnaires</div>
 
                 <div class="card-body">
                     <ul>

@@ -8,11 +8,6 @@ use Illuminate\Http\Request;
 class QuestionnaireController extends Controller
 {
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -59,7 +54,7 @@ class QuestionnaireController extends Controller
      */
     public function show(Questionnaire $questionnaire)
     {
-        $questionnaire->load('questions.answers');
+        $questionnaire->load('questions.answers.responses');
 
         return view('questionnaire.show', compact('questionnaire'));
     }

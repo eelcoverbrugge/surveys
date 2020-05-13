@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Create New Question</div>
+                <div class="card-header">Create new question</div>
 
                 <div class="card-body">
                     <form action="/questionnaires/{{$questionnaire->id}}/questions" method="post">
@@ -13,7 +13,7 @@
                         <div class="form-group">
                             <label for="question">Title</label>
                             <input  name="question[question]" type="text" class="form-control" 
-                                    id="question" aria-describedby="questionHelp" placeholder="Enter Question"
+                                    id="question" aria-describedby="questionHelp" placeholder="Enter question"
                                     value="{{old('question.question')}}">
                             <small id="questionHelp" class="form-text text-muted">Ask simple and to-the-point questions for the best results.</small>
                             @error('question.question')
@@ -28,7 +28,7 @@
                                     <div class="form-group">
                                         <label for="answer1">Choices 1</label>
                                         <input  name="answers[][answer]" type="text" class="form-control" 
-                                                id="answer1" aria-describedby="choisesHelp" placeholder="Enter Choices 1"
+                                                id="answer1" aria-describedby="choisesHelp" placeholder="Enter choices 1"
                                                 value="{{old('answers.0.answer')}}">
                                         @error('answers.0.answer')
                                             <small class="text-danger">{{$message}}</small>
@@ -39,7 +39,7 @@
                                     <div class="form-group">
                                         <label for="answer2">Choices 2</label>
                                         <input  name="answers[][answer]" type="text" class="form-control" 
-                                                id="answer2" aria-describedby="choisesHelp" placeholder="Enter Choices 2"
+                                                id="answer2" aria-describedby="choisesHelp" placeholder="Enter choices 2"
                                                 value="{{old('answers.1.answer')}}">
                                         @error('answers.1.answer')
                                             <small class="text-danger">{{$message}}</small>
@@ -50,7 +50,7 @@
                                     <div class="form-group">
                                         <label for="answer3">Choices 3</label>
                                         <input  name="answers[][answer]" type="text" class="form-control" 
-                                                id="answer3" aria-describedby="choisesHelp" placeholder="Enter Choices 3"
+                                                id="answer3" aria-describedby="choisesHelp" placeholder="Enter choices 3"
                                                 value="{{old('answers.2.answer')}}">
                                         @error('answers.2.answer')
                                             <small class="text-danger">{{$message}}</small>
@@ -61,7 +61,7 @@
                                     <div class="form-group">
                                         <label for="answer4">Choices 4</label>
                                         <input  name="answers[][answer]" type="text" class="form-control" 
-                                                id="answer4" aria-describedby="choisesHelp" placeholder="Enter Choices 4"
+                                                id="answer4" aria-describedby="choisesHelp" placeholder="Enter choices 4"
                                                 value="{{old('answers.3.answer')}}">
                                         @error('answers.3.answer')
                                             <small class="text-danger">{{$message}}</small>
@@ -70,7 +70,7 @@
                                 </div>
                             </fieldset>
                         </div>
-                        <button type="submit" class="btn btn-primary">Add Question                    </form>
+                        <button type="submit" class="btn btn-primary">Add question                    </form>
                 </div>
             </div>
         </div>
