@@ -68,6 +68,17 @@
                                         @enderror
                                     </div>
                                 </div>
+                                <div>
+                                    <div class="form-group">
+                                        <label for="answer5">Choices 5</label>
+                                        <input  name="answers[][answer]" type="text" class="form-control" 
+                                                id="answer5" aria-describedby="choisesHelp" placeholder="Enter choices 5"
+                                                value="{{old('answers.4.answer')}}">
+                                        @error('answers.4.answer')
+                                            <small class="text-danger">{{$message}}</small>
+                                        @enderror
+                                    </div>
+                                </div>
                             </fieldset>
                         </div>
                         <button type="submit" class="btn btn-primary">Add question                    </form>
