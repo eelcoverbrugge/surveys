@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Questionnaire;
+use App\Survey;
+use App\Answer;
 
 class HomeController extends Controller
 {
@@ -23,8 +26,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $questionnaires = auth()->user()->questionnaires;
+        $questionnaires         = auth()->user()->questionnaires;
 
-        return view('home', compact('questionnaires'));
+        $totalQuestionnaires    = count(Questionnaire::all());
+        $totalSurveys           = count(Survey::all());
+        $totalAnswers            = count(Answer::all());
+
+        return view('home', compact('questionnaires', 'totalQuestionnaires', 'totalSurveys', 'totalAnswers'));
     }
 }
