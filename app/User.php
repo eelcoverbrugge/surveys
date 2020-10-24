@@ -41,4 +41,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(Questionnaire::class);
     }
+    
+    public function userQuestions()
+    {
+        return $this->hasManyThrough('App\Question', 'App\Questionnaire');
+    }
+    
+    public function userSurveys()
+    {
+        return $this->hasManyThrough('App\Survey', 'App\Questionnaire');
+    }
 }

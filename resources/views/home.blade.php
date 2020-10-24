@@ -21,12 +21,12 @@
                             {{ $totalQuestionnaires }}
                         </div>
                         <div class="col-md-4">
-                            <p>Surveys filled in:</p>
-                            {{ $totalSurveys }}
+                            <p>Questions asked:</p>
+                            {{ $totalQuestions }}
                         </div>
                         <div class="col-md-4">
-                            <p>Questions answered:</p>
-                            {{ $totalAnswers }}
+                            <p>Completed surveys:</p>
+                            {{ $totalSurveys }}
                         </div>
                     </div>
 

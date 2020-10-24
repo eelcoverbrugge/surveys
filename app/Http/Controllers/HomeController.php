@@ -27,11 +27,13 @@ class HomeController extends Controller
     public function index()
     {
         $questionnaires         = auth()->user()->questionnaires;
+        $questions              = auth()->user()->userQuestions;
+        $surveys                = auth()->user()->userSurveys;
+        
+        $totalQuestionnaires    = count($questionnaires);
+        $totalQuestions         = count($questions);
+        $totalSurveys           = count($surveys);
 
-        $totalQuestionnaires    = count(Questionnaire::all());
-        $totalSurveys           = count(Survey::all());
-        $totalAnswers            = count(Answer::all());
-
-        return view('home', compact('questionnaires', 'totalQuestionnaires', 'totalSurveys', 'totalAnswers'));
+        return view('home', compact('questionnaires', 'totalQuestionnaires', 'totalQuestions', 'totalSurveys'));
     }
 }
