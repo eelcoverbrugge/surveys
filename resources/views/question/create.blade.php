@@ -11,9 +11,9 @@
                     <form action="/questionnaires/{{$questionnaire->id}}/questions" method="post">
                         @csrf
                         <div class="form-group">
-                            <label for="question">Title</label>
+                            <label for="question">Question</label>
                             <input  name="question[question]" type="text" class="form-control" 
-                                    id="question" aria-describedby="questionHelp" placeholder="Enter question"
+                                    id="question" aria-describedby="questionHelp" placeholder="How are you doing?"
                                     value="{{old('question.question')}}">
                             <small id="questionHelp" class="form-text text-muted">Ask simple and to-the-point questions for the best results.</small>
                             @error('question.question')
@@ -28,7 +28,7 @@
                                     <div class="form-group">
                                         <label for="answer1">Choices 1</label>
                                         <input  name="answers[][answer]" type="text" class="form-control" 
-                                                id="answer1" aria-describedby="choisesHelp" placeholder="Enter choices 1"
+                                                id="answer1" aria-describedby="choisesHelp" placeholder="Great"
                                                 value="{{old('answers.0.answer')}}">
                                         @error('answers.0.answer')
                                             <small class="text-danger">{{$message}}</small>
@@ -39,7 +39,7 @@
                                     <div class="form-group">
                                         <label for="answer2">Choices 2</label>
                                         <input  name="answers[][answer]" type="text" class="form-control" 
-                                                id="answer2" aria-describedby="choisesHelp" placeholder="Enter choices 2"
+                                                id="answer2" aria-describedby="choisesHelp" placeholder="Fine"
                                                 value="{{old('answers.1.answer')}}">
                                         @error('answers.1.answer')
                                             <small class="text-danger">{{$message}}</small>
@@ -50,7 +50,7 @@
                                     <div class="form-group">
                                         <label for="answer3">Choices 3</label>
                                         <input  name="answers[][answer]" type="text" class="form-control" 
-                                                id="answer3" aria-describedby="choisesHelp" placeholder="Enter choices 3"
+                                                id="answer3" aria-describedby="choisesHelp" placeholder="Don't Know"
                                                 value="{{old('answers.2.answer')}}">
                                         @error('answers.2.answer')
                                             <small class="text-danger">{{$message}}</small>
@@ -61,7 +61,7 @@
                                     <div class="form-group">
                                         <label for="answer4">Choices 4</label>
                                         <input  name="answers[][answer]" type="text" class="form-control" 
-                                                id="answer4" aria-describedby="choisesHelp" placeholder="Enter choices 4"
+                                                id="answer4" aria-describedby="choisesHelp" placeholder="Not so well"
                                                 value="{{old('answers.3.answer')}}">
                                         @error('answers.3.answer')
                                             <small class="text-danger">{{$message}}</small>
@@ -72,7 +72,7 @@
                                     <div class="form-group">
                                         <label for="answer5">Choices 5</label>
                                         <input  name="answers[][answer]" type="text" class="form-control" 
-                                                id="answer5" aria-describedby="choisesHelp" placeholder="Enter choices 5"
+                                                id="answer5" aria-describedby="choisesHelp" placeholder="Terrible"
                                                 value="{{old('answers.4.answer')}}">
                                         @error('answers.4.answer')
                                             <small class="text-danger">{{$message}}</small>
